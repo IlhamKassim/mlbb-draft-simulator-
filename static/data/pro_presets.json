@@ -1,0 +1,20 @@
+{
+  "presets": {
+    "ONIC_Kairi": {
+      "name": "Kairi (ONIC)",
+      "team": "ONIC Esports",
+      "tournament": "M5 World Championship",
+      "preferred_bans": ["Ling", "Mathilda", "Lancelot"],
+      "signature_heroes": ["Hayabusa", "Karrie", "Benedetta"],
+      "playstyle": "Aggressive jungler"
+    },
+    "ECHO_KarlTzy": {
+      "name": "KarlTzy (ECHO)",
+      "team": "ECHO",
+      "tournament": "MPL PH S13",
+      "preferred_bans": ["Beatrix", "Julian", "Valentina"],
+      "signature_heroes": ["Lancelot", "Ling", "Hayabusa"],
+      "playstyle": "Objective-focused"
+    }
+  }
+} 

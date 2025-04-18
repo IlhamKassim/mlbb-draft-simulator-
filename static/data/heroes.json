@@ -1,0 +1,147 @@
+{
+    "aamon": {
+        "name": "Aamon",
+        "role": "Assassin",
+        "description": "A stealthy assassin who excels in burst damage and invisibility."
+    },
+    "akai": {
+        "name": "Akai",
+        "role": "Tank",
+        "description": "A durable tank with strong crowd control abilities."
+    },
+    "aldous": {
+        "name": "Aldous",
+        "role": "Fighter",
+        "description": "A late-game fighter who can stack damage infinitely."
+    },
+    "alice": {
+        "name": "Alice",
+        "role": "Mage",
+        "description": "A sustain mage with high mobility and lifesteal."
+    },
+    "angela": {
+        "name": "Angela",
+        "role": "Support",
+        "description": "A support hero who can attach to allies and provide healing."
+    },
+    "argus": {
+        "name": "Argus",
+        "role": "Fighter",
+        "description": "A fighter with temporary immortality and high damage potential."
+    },
+    "atlas": {
+        "name": "Atlas",
+        "role": "Tank",
+        "description": "A tank with powerful area control and crowd control abilities."
+    },
+    "aulus": {
+        "name": "Aulus",
+        "role": "Fighter",
+        "description": "A fighter who grows stronger as the game progresses."
+    },
+    "aurora": {
+        "name": "Aurora",
+        "role": "Mage",
+        "description": "A control mage with powerful freezing abilities."
+    },
+    "badang": {
+        "name": "Badang",
+        "role": "Fighter",
+        "description": "A fighter who excels in wall-pinning enemies."
+    },
+    "balmond": {
+        "name": "Balmond",
+        "role": "Fighter",
+        "description": "A fighter with high sustain and execution abilities."
+    },
+    "barats": {
+        "name": "Barats",
+        "role": "Tank",
+        "description": "A tank who grows in size and power with stacks."
+    },
+    "baxia": {
+        "name": "Baxia",
+        "role": "Tank",
+        "description": "A mobile tank with anti-heal capabilities."
+    },
+    "beatrix": {
+        "name": "Beatrix",
+        "role": "Marksman",
+        "description": "A versatile marksman with multiple weapon options."
+    },
+    "belerick": {
+        "name": "Belerick",
+        "role": "Tank",
+        "description": "A tank who reflects damage back to attackers."
+    },
+    "benedetta": {
+        "name": "Benedetta",
+        "role": "Assassin",
+        "description": "An agile assassin with immunity frames and high mobility."
+    },
+    "brody": {
+        "name": "Brody",
+        "role": "Marksman",
+        "description": "A marksman with high burst damage and stacking mechanics."
+    },
+    "bruno": {
+        "name": "Bruno",
+        "role": "Marksman",
+        "description": "A marksman with critical strike focus and ball mechanics."
+    },
+    "carmilla": {
+        "name": "Carmilla",
+        "role": "Support",
+        "description": "A support who can link enemies together and share damage."
+    },
+    "cecilion": {
+        "name": "Cecilion",
+        "role": "Mage",
+        "description": "A mage with infinite scaling and long-range abilities."
+    },
+    "chang'e": {
+        "name": "Chang'e",
+        "role": "Mage",
+        "description": "A mage with continuous damage output and movement speed boost."
+    },
+    "claude": {
+        "name": "Claude",
+        "role": "Marksman",
+        "description": "A mobile marksman who uses his monkey companion for enhanced attacks."
+    },
+    "cyclops": {
+        "name": "Cyclops",
+        "role": "Mage",
+        "description": "A mage who reduces cooldowns by hitting enemies with skills."
+    },
+    "diggie": {
+        "name": "Diggie",
+        "role": "Support",
+        "description": "A support who can prevent crowd control and set time bombs."
+    },
+    "dyrroth": {
+        "name": "Dyrroth",
+        "role": "Fighter",
+        "description": "A fighter who excels in armor reduction and sustained damage."
+    },
+    "esmeralda": {
+        "name": "Esmeralda",
+        "role": "Mage",
+        "description": "A mage/tank hybrid who converts shields to damage."
+    },
+    "estes": {
+        "name": "Estes",
+        "role": "Support",
+        "description": "A support specializing in continuous healing and mana regeneration."
+    },
+    "eudora": {
+        "name": "Eudora",
+        "role": "Mage",
+        "description": "A mage with powerful single-target burst damage."
+    },
+    "fanny": {
+        "name": "Fanny",
+        "role": "Assassin",
+        "description": "A cable-swinging assassin with unique mobility mechanics."
+    }
+} 

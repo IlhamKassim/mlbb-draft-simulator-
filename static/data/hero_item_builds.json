@@ -1,0 +1,506 @@
+{
+  "Baxia": {
+    "default": ["Warrior Boots", "Courage Mask", "Athena's Shield", "Dominance Ice", "Brute Force Breastplate", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Radiant Armor", "Athena's Shield", "Heart of Steel", "Blade Armor", "Immortality"],
+    "high_magic": ["Tough Boots", "Antique Cuirass", "Athena's Shield", "Holy Crystal", "Oracle", "Immortality"]
+  },
+  "Claude": {
+    "default": ["Swift Boots", "Demon Hunter Sword", "Golden Staff", "Wind of Nature", "Corrosion Scythe", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Demon Hunter Sword", "Golden Staff", "Wind of Nature", "Rose Gold Meteor", "Immortality"],
+    "high_magic": ["Tough Boots", "Demon Hunter Sword", "Golden Staff", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Chou": {
+    "default": ["Warrior Boots", "Blade of Despair", "Endless Battle", "Malefic Roar", "Hunter Strike", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Blade of Despair", "War Axe", "Malefic Roar", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Athena's Shield", "War Axe", "Rose Gold Meteor", "Immortality"]
+  },
+  "Lancelot": {
+    "default": ["Warrior Boots", "Blade of Despair", "Endless Battle", "Malefic Roar", "Hunter Strike", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Blade of Despair", "War Axe", "Hunter Strike", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Athena's Shield", "War Axe", "Rose Gold Meteor", "Immortality"]
+  },
+  "Gusion": {
+    "default": ["Arcane Boots", "Calamity Reaper", "Holy Crystal", "Divine Glaive", "Genius Wand", "Winter Truncheon"],
+    "heavy_cc": ["Tough Boots", "Calamity Reaper", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Immortality"],
+    "high_magic": ["Tough Boots", "Calamity Reaper", "Athena's Shield", "Divine Glaive", "Winter Truncheon", "Immortality"]
+  },
+  "Cecilion": {
+    "default": ["Demon Shoes", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Divine Glaive", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Winter Truncheon", "Holy Crystal", "Divine Glaive", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Athena's Shield", "Holy Crystal", "Divine Glaive", "Winter Truncheon"]
+  },
+  "Beatrix": {
+    "default": ["Warrior Boots", "Blade of Despair", "Berserker's Fury", "Scarlet Phantom", "Malefic Roar", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Blade of Despair", "Wind of Nature", "Malefic Roar", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Athena's Shield", "Rose Gold Meteor", "Malefic Roar", "Immortality"]
+  },
+  "Aamon": {
+    "default": {
+      "name": "Burst Assassin",
+      "items": ["arcane-boots", "enchanted-talisman", "holy-crystal", "genius-wand", "divine-glaive", "blood-wings"],
+      "description": "Standard burst damage build focusing on magical penetration"
+    },
+    "heavy_cc": {
+      "name": "Survivability",
+      "items": ["warrior-boots", "enchanted-talisman", "holy-crystal", "winter-truncheon", "immortality", "athena-shield"],
+      "description": "Defensive build against heavy crowd control"
+    },
+    "high_damage": {
+      "name": "Glass Cannon",
+      "items": ["arcane-boots", "clock-of-destiny", "lightning-truncheon", "holy-crystal", "divine-glaive", "blood-wings"],
+      "description": "Maximum burst damage output"
+    }
+  },
+  "Aldous": {
+    "default": ["Warrior Boots", "Endless Battle", "Blade of Despair", "Malefic Roar", "Thunder Belt", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Endless Battle", "Thunder Belt", "Athena's Shield", "Immortality", "Antique Cuirass"],
+    "high_magic": ["Tough Boots", "Endless Battle", "Athena's Shield", "Rose Gold Meteor", "Thunder Belt", "Immortality"]
+  },
+  "Alice": {
+    "default": ["Demon Shoes", "Clock of Destiny", "Holy Crystal", "Winter Truncheon", "Blood Wings", "Divine Glaive"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Winter Truncheon", "Holy Crystal", "Immortality", "Divine Glaive"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Athena's Shield", "Holy Crystal", "Oracle", "Immortality"]
+  },
+  "Alpha": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Athena's Shield", "Rose Gold Meteor", "Queen's Wings", "Immortality"]
+  },
+  "Alucard": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Blade of Despair", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Athena's Shield", "Rose Gold Meteor", "Queen's Wings", "Immortality"]
+  },
+  "Angela": {
+    "default": {
+      "name": "Support Build",
+      "items": ["demon-shoes", "enchanted-talisman", "dominance-ice", "oracle", "athena-shield", "immortality"],
+      "description": "Standard support build with CDR and survivability"
+    },
+    "heavy_cc": {
+      "name": "Tank Support",
+      "items": ["tough-boots", "dominance-ice", "oracle", "athena-shield", "antique-cuirass", "immortality"],
+      "description": "Extra defensive items against CC-heavy teams"
+    },
+    "high_damage": {
+      "name": "Hybrid Support",
+      "items": ["demon-shoes", "enchanted-talisman", "necklace-of-durance", "ice-queen-wand", "holy-crystal", "immortality"],
+      "description": "Balanced damage and support items"
+    }
+  },
+  "Argus": {
+    "default": ["Swift Boots", "Scarlet Phantom", "Berserker's Fury", "Windtalker", "Blade of Despair", "Malefic Roar"],
+    "heavy_cc": ["Warrior Boots", "Scarlet Phantom", "Berserker's Fury", "Wind of Nature", "Queen's Wings", "Immortality"],
+    "high_magic": ["Tough Boots", "Scarlet Phantom", "Berserker's Fury", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Atlas": {
+    "default": ["Warrior Boots", "Cursed Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Cursed Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "high_magic": ["Tough Boots", "Radiant Armor", "Athena's Shield", "Oracle", "Antique Cuirass", "Immortality"]
+  },
+  "Aulus": {
+    "default": ["Swift Boots", "War Axe", "Blade of Despair", "Berserker's Fury", "Scarlet Phantom", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "War Axe", "Blade of Despair", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Athena's Shield", "Rose Gold Meteor", "Queen's Wings", "Immortality"]
+  },
+  "Aurora": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Divine Glaive", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Winter Truncheon", "Holy Crystal", "Divine Glaive", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Athena's Shield", "Holy Crystal", "Divine Glaive", "Winter Truncheon"]
+  },
+  "Badang": {
+    "default": ["Warrior Boots", "War Axe", "Endless Battle", "Blade of Despair", "Hunter Strike", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Endless Battle", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Endless Battle", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Balmond": {
+    "default": ["Warrior Boots", "Bloodlust Axe", "War Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Bloodlust Axe", "War Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Bloodlust Axe", "War Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Barats": {
+    "default": ["Warrior Boots", "Cursed Helmet", "Guardian Helmet", "Antique Cuirass", "Athena's Shield", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Guardian Helmet", "Antique Cuirass", "Athena's Shield", "Dominance Ice", "Immortality"],
+    "high_magic": ["Tough Boots", "Guardian Helmet", "Radiant Armor", "Athena's Shield", "Oracle", "Immortality"]
+  },
+  "Belerick": {
+    "default": ["Warrior Boots", "Guardian Helmet", "Dominance Ice", "Athena's Shield", "Oracle", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Guardian Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "high_magic": ["Tough Boots", "Guardian Helmet", "Radiant Armor", "Athena's Shield", "Oracle", "Immortality"]
+  },
+  "Benedetta": {
+    "default": ["Warrior Boots", "War Axe", "Blade of Despair", "Hunter Strike", "Malefic Roar", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Blade of Despair", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Blade of Despair", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Brody": {
+    "default": ["Warrior Boots", "Blade of Despair", "Hunter Strike", "Malefic Roar", "Berserker's Fury", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Blade of Despair", "Hunter Strike", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Hunter Strike", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Bruno": {
+    "default": ["Swift Boots", "Scarlet Phantom", "Berserker's Fury", "Windtalker", "Blade of Despair", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Scarlet Phantom", "Berserker's Fury", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Scarlet Phantom", "Berserker's Fury", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Carmilla": {
+    "default": ["Warrior Boots", "Enchanted Talisman", "Dominance Ice", "Oracle", "Athena's Shield", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Enchanted Talisman", "Dominance Ice", "Oracle", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Enchanted Talisman", "Oracle", "Athena's Shield", "Radiant Armor", "Immortality"]
+  },
+  "Chang'e": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Blood Wings", "Winter Truncheon"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Clint": {
+    "default": ["Swift Boots", "Endless Battle", "Berserker's Fury", "Blade of Despair", "Malefic Roar", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Endless Battle", "Berserker's Fury", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Endless Battle", "Berserker's Fury", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Cyclops": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Blood Wings", "Winter Truncheon"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Diggie": {
+    "default": ["Demon Shoes", "Enchanted Talisman", "Dominance Ice", "Oracle", "Athena's Shield", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Enchanted Talisman", "Dominance Ice", "Oracle", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Enchanted Talisman", "Oracle", "Athena's Shield", "Radiant Armor", "Immortality"]
+  },
+  "Dyrroth": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Malefic Roar", "Hunter Strike", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Bloodlust Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Edith": {
+    "default": ["Warrior Boots", "Cursed Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Guardian Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "high_magic": ["Tough Boots", "Guardian Helmet", "Radiant Armor", "Athena's Shield", "Oracle", "Immortality"]
+  },
+  "Esmeralda": {
+    "default": ["Magic Shoes", "Enchanted Talisman", "Holy Crystal", "Divine Glaive", "Oracle", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Enchanted Talisman", "Holy Crystal", "Oracle", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Enchanted Talisman", "Oracle", "Athena's Shield", "Radiant Armor", "Immortality"]
+  },
+  "Estes": {
+    "default": ["Demon Shoes", "Enchanted Talisman", "Dominance Ice", "Oracle", "Athena's Shield", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Enchanted Talisman", "Dominance Ice", "Oracle", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Enchanted Talisman", "Oracle", "Athena's Shield", "Radiant Armor", "Immortality"]
+  },
+  "Eudora": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Divine Glaive", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Winter Truncheon", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Fanny": {
+    "default": ["Warrior Boots", "Bloodlust Axe", "Malefic Roar", "Hunter Strike", "Blade of Despair", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Bloodlust Axe", "Hunter Strike", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Faramis": {
+    "default": ["Demon Shoes", "Enchanted Talisman", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Enchanted Talisman", "Holy Crystal", "Winter Truncheon", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Enchanted Talisman", "Holy Crystal", "Athena's Shield", "Radiant Armor", "Immortality"]
+  },
+  "Floryn": {
+    "default": ["Demon Shoes", "Enchanted Talisman", "Dominance Ice", "Oracle", "Athena's Shield", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Enchanted Talisman", "Dominance Ice", "Oracle", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Enchanted Talisman", "Oracle", "Athena's Shield", "Radiant Armor", "Immortality"]
+  },
+  "Franco": {
+    "default": ["Warrior Boots", "Cursed Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Guardian Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "high_magic": ["Tough Boots", "Guardian Helmet", "Radiant Armor", "Athena's Shield", "Oracle", "Immortality"]
+  },
+  "Fredrinn": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Bloodlust Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Freya": {
+    "default": ["Swift Boots", "War Axe", "Berserker's Fury", "Scarlet Phantom", "Blade of Despair", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "War Axe", "Queen's Wings", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Queen's Wings", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Gatotkaca": {
+    "default": ["Warrior Boots", "Cursed Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Guardian Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "high_magic": ["Tough Boots", "Guardian Helmet", "Radiant Armor", "Athena's Shield", "Oracle", "Immortality"]
+  },
+  "Gloo": {
+    "default": ["Warrior Boots", "Cursed Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Guardian Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "high_magic": ["Tough Boots", "Guardian Helmet", "Radiant Armor", "Athena's Shield", "Oracle", "Immortality"]
+  },
+  "Gord": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Divine Glaive", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Winter Truncheon", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Granger": {
+    "default": ["Warrior Boots", "Blade of Despair", "Hunter Strike", "Malefic Roar", "Endless Battle", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Blade of Despair", "Hunter Strike", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Hunter Strike", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Grock": {
+    "default": ["Warrior Boots", "Cursed Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Guardian Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "high_magic": ["Tough Boots", "Guardian Helmet", "Radiant Armor", "Athena's Shield", "Oracle", "Immortality"]
+  },
+  "Guinevere": {
+    "default": ["Arcane Boots", "Genius Wand", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Genius Wand", "Holy Crystal", "Winter Truncheon", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Genius Wand", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Hanabi": {
+    "default": ["Swift Boots", "Scarlet Phantom", "Berserker's Fury", "Windtalker", "Blade of Despair", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Scarlet Phantom", "Berserker's Fury", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Scarlet Phantom", "Berserker's Fury", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Hanzo": {
+    "default": ["Swift Boots", "Blade of Despair", "Endless Battle", "Malefic Roar", "Hunter Strike", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Blade of Despair", "Endless Battle", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Endless Battle", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Harith": {
+    "default": ["Arcane Boots", "Calamity Reaper", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Calamity Reaper", "Holy Crystal", "Winter Truncheon", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Calamity Reaper", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Harley": {
+    "default": ["Arcane Boots", "Genius Wand", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Genius Wand", "Holy Crystal", "Winter Truncheon", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Genius Wand", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Hayabusa": {
+    "default": ["Swift Boots", "Blade of Despair", "Endless Battle", "Malefic Roar", "Hunter Strike", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Blade of Despair", "Endless Battle", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Endless Battle", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Helcurt": {
+    "default": ["Swift Boots", "Blade of Despair", "Endless Battle", "Malefic Roar", "Hunter Strike", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Blade of Despair", "Endless Battle", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Endless Battle", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Hilda": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Bloodlust Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Hylos": {
+    "default": ["Warrior Boots", "Cursed Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Guardian Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "high_magic": ["Tough Boots", "Guardian Helmet", "Radiant Armor", "Athena's Shield", "Oracle", "Immortality"]
+  },
+  "Irithel": {
+    "default": ["Swift Boots", "Scarlet Phantom", "Berserker's Fury", "Windtalker", "Blade of Despair", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Scarlet Phantom", "Berserker's Fury", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Scarlet Phantom", "Berserker's Fury", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Johnson": {
+    "default": ["Warrior Boots", "Cursed Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Guardian Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "high_magic": ["Tough Boots", "Guardian Helmet", "Radiant Armor", "Athena's Shield", "Oracle", "Immortality"]
+  },
+  "Joy": {
+    "default": ["Arcane Boots", "Calamity Reaper", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Calamity Reaper", "Holy Crystal", "Winter Truncheon", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Calamity Reaper", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Julian": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Bloodlust Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Kadita": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Winter Truncheon", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Kagura": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Divine Glaive", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Winter Truncheon", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Kaja": {
+    "default": ["Demon Shoes", "Calamity Reaper", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Calamity Reaper", "Holy Crystal", "Winter Truncheon", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Calamity Reaper", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Karrie": {
+    "default": ["Swift Boots", "Demon Hunter Sword", "Golden Staff", "Windtalker", "Corrosion Scythe", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Demon Hunter Sword", "Golden Staff", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Demon Hunter Sword", "Golden Staff", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Khaleed": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Bloodlust Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Khufra": {
+    "default": ["Warrior Boots", "Cursed Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Guardian Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "high_magic": ["Tough Boots", "Guardian Helmet", "Radiant Armor", "Athena's Shield", "Oracle", "Immortality"]
+  },
+  "Kimmy": {
+    "default": ["Swift Boots", "Genius Wand", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Genius Wand", "Holy Crystal", "Winter Truncheon", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Genius Wand", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Lapu-Lapu": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Bloodlust Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Layla": {
+    "default": ["Swift Boots", "Scarlet Phantom", "Berserker's Fury", "Windtalker", "Blade of Despair", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Scarlet Phantom", "Berserker's Fury", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Scarlet Phantom", "Berserker's Fury", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Leomord": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Bloodlust Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Lesley": {
+    "default": ["Swift Boots", "Blade of Despair", "Berserker's Fury", "Scarlet Phantom", "Malefic Roar", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Blade of Despair", "Wind of Nature", "Malefic Roar", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Rose Gold Meteor", "Malefic Roar", "Athena's Shield", "Immortality"]
+  },
+  "Ling": {
+    "default": ["Swift Boots", "Blade of Despair", "Endless Battle", "Malefic Roar", "Hunter Strike", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Blade of Despair", "Endless Battle", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Endless Battle", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Lolita": {
+    "default": ["Warrior Boots", "Cursed Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Guardian Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "high_magic": ["Tough Boots", "Guardian Helmet", "Radiant Armor", "Athena's Shield", "Oracle", "Immortality"]
+  },
+  "Lou Yi": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Divine Glaive", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Winter Truncheon", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Lunox": {
+    "default": ["Demon Shoes", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Winter Truncheon", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Lylia": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Divine Glaive", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Winter Truncheon", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Martis": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Bloodlust Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Masha": {
+    "default": ["Swift Boots", "War Axe", "Blade of Despair", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "War Axe", "Queen's Wings", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Queen's Wings", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Mathilda": {
+    "default": ["Demon Shoes", "Enchanted Talisman", "Dominance Ice", "Oracle", "Athena's Shield", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Enchanted Talisman", "Dominance Ice", "Oracle", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Enchanted Talisman", "Oracle", "Athena's Shield", "Radiant Armor", "Immortality"]
+  },
+  "Melissa": {
+    "default": ["Swift Boots", "Scarlet Phantom", "Berserker's Fury", "Windtalker", "Blade of Despair", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Scarlet Phantom", "Berserker's Fury", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Scarlet Phantom", "Berserker's Fury", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Minotaur": {
+    "default": ["Warrior Boots", "Cursed Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Guardian Helmet", "Dominance Ice", "Athena's Shield", "Antique Cuirass", "Immortality"],
+    "high_magic": ["Tough Boots", "Guardian Helmet", "Radiant Armor", "Athena's Shield", "Oracle", "Immortality"]
+  },
+  "Minsitthar": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Bloodlust Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Miya": {
+    "default": ["Swift Boots", "Scarlet Phantom", "Berserker's Fury", "Windtalker", "Blade of Despair", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Scarlet Phantom", "Berserker's Fury", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Scarlet Phantom", "Berserker's Fury", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Moskov": {
+    "default": ["Swift Boots", "Scarlet Phantom", "Berserker's Fury", "Windtalker", "Blade of Despair", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Scarlet Phantom", "Berserker's Fury", "Wind of Nature", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Scarlet Phantom", "Berserker's Fury", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Nana": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Divine Glaive", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Winter Truncheon", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Natalia": {
+    "default": ["Swift Boots", "Blade of Despair", "Endless Battle", "Malefic Roar", "Hunter Strike", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Blade of Despair", "Endless Battle", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Endless Battle", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  },
+  "Natan": {
+    "default": ["Swift Boots", "Blade of Despair", "Berserker's Fury", "Scarlet Phantom", "Malefic Roar", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Blade of Despair", "Wind of Nature", "Malefic Roar", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Rose Gold Meteor", "Malefic Roar", "Athena's Shield", "Immortality"]
+  },
+  "Novaria": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Winter Truncheon", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Winter Truncheon", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Odette": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Divine Glaive", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Winter Truncheon", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Paquito": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Bloodlust Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Pharsa": {
+    "default": ["Arcane Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Divine Glaive", "Blood Wings"],
+    "heavy_cc": ["Tough Boots", "Clock of Destiny", "Lightning Truncheon", "Holy Crystal", "Winter Truncheon", "Immortality"],
+    "high_magic": ["Tough Boots", "Clock of Destiny", "Holy Crystal", "Divine Glaive", "Athena's Shield", "Winter Truncheon"]
+  },
+  "Phoveus": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Bloodlust Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Popol and Kupa": {
+    "default": ["Swift Boots", "Blade of Despair", "Berserker's Fury", "Scarlet Phantom", "Malefic Roar", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Blade of Despair", "Wind of Nature", "Malefic Roar", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Rose Gold Meteor", "Malefic Roar", "Athena's Shield", "Immortality"]
+  },
+  "Rafaela": {
+    "default": ["Demon Shoes", "Enchanted Talisman", "Dominance Ice", "Oracle", "Athena's Shield", "Immortality"],
+    "heavy_cc": ["Tough Boots", "Enchanted Talisman", "Dominance Ice", "Oracle", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Enchanted Talisman", "Oracle", "Athena's Shield", "Radiant Armor", "Immortality"]
+  },
+  "Roger": {
+    "default": ["Swift Boots", "War Axe", "Blade of Despair", "Berserker's Fury", "Scarlet Phantom", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "War Axe", "Blade of Despair", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Blade of Despair", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Ruby": {
+    "default": ["Warrior Boots", "War Axe", "Bloodlust Axe", "Hunter Strike", "Queen's Wings", "Immortality"],
+    "heavy_cc": ["Tough Boots", "War Axe", "Bloodlust Axe", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "War Axe", "Bloodlust Axe", "Athena's Shield", "Rose Gold Meteor", "Immortality"]
+  },
+  "Rynn": {
+    "default": ["Swift Boots", "Blade of Despair", "Berserker's Fury", "Scarlet Phantom", "Malefic Roar", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Blade of Despair", "Wind of Nature", "Malefic Roar", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Rose Gold Meteor", "Malefic Roar", "Athena's Shield", "Immortality"]
+  },
+  "Saber": {
+    "default": ["Swift Boots", "Blade of Despair", "Endless Battle", "Malefic Roar", "Hunter Strike", "Immortality"],
+    "heavy_cc": ["Warrior Boots", "Blade of Despair", "Endless Battle", "Queen's Wings", "Athena's Shield", "Immortality"],
+    "high_magic": ["Tough Boots", "Blade of Despair", "Endless Battle", "Rose Gold Meteor", "Athena's Shield", "Immortality"]
+  }
+} 

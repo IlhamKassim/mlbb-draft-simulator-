@@ -1,0 +1,34 @@
+{
+  "heroes": [
+    {
+      "id": "test_hero_1",
+      "name": "Test Fighter",
+      "roles": ["Fighter"],
+      "specialty": "Damage/Durability",
+      "difficulty": "Moderate",
+      "description": "A test fighter hero for unit testing",
+      "counters": ["Test Mage", "Test Marksman"],
+      "countered_by": ["Test Assassin"]
+    },
+    {
+      "id": "test_hero_2",
+      "name": "Test Mage",
+      "roles": ["Mage"],
+      "specialty": "Magic Damage",
+      "difficulty": "High",
+      "description": "A test mage hero for unit testing",
+      "counters": ["Test Marksman"],
+      "countered_by": ["Test Fighter", "Test Assassin"]
+    },
+    {
+      "id": "test_hero_3",
+      "name": "Test Tank",
+      "roles": ["Tank"],
+      "specialty": "Crowd Control",
+      "difficulty": "Low",
+      "description": "A test tank hero for unit testing",
+      "counters": ["Test Mage"],
+      "countered_by": ["Test Marksman"]
+    }
+  ]
+} 

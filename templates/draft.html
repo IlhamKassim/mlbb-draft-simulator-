@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="draft-container">
+    <div class="team-panel blue-team">
+        <h2>Blue Team</h2>
+        <div class="ban-section">
+            <h3>Bans</h3>
+            <div class="ban-slots" role="list" aria-label="Blue team bans">
+                {% for i in range(3) %}
+                <div class="draft-slot ban-slot" 
+                     role="listitem"
+                     tabindex="0"
+                     data-team="blue"
+                     data-index="{{ i }}"
+                     data-type="ban"
+                     aria-label="Blue team ban slot {{ i + 1 }} of 3"></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="pick-section">
+            <h3>Picks</h3>
+            <div class="pick-slots" role="list" aria-label="Blue team picks">
+                {% for i in range(5) %}
+                <div class="draft-slot pick-slot"
+                     role="listitem"
+                     tabindex="0"
+                     data-team="blue"
+                     data-index="{{ i }}"
+                     data-type="pick"
+                     aria-label="Blue team pick slot {{ i + 1 }} of 5"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="center-panel">
+        <div id="filter-bar" class="sticky-top">
+            <div class="search-container">
+                <input type="text" 
+                       id="heroSearch" 
+                       placeholder="Search heroes..." 
+                       aria-label="Search heroes">
+                <select id="roleFilter" aria-label="Filter heroes by role">
+                    <option value="all">All Roles</option>
+                    {% for role in hero_roles.roles %}
+                    <option value="{{ role|lower }}">{{ role }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button id="shareButton" 
+                    class="btn btn-primary" 
+                    aria-label="Share draft">
+                <i class="bi bi-share"></i> Share
+            </button>
+        </div>
+
+        <div class="hero-grid" role="grid" aria-label="Hero selection grid">
+            {% for hero in hero_list %}
+            <div class="hero-card" 
+                 role="gridcell"
+                 tabindex="0"
+                 data-hero="{{ hero }}" 
+                 data-role="{{ hero_roles.heroes.get(hero, [])|join(' ') }}"
+                 draggable="true"
+                 aria-label="{{ hero }} - {{ hero_roles.heroes.get(hero, [])|join(', ') }}">
+                <img src="{{ url_for('static', filename='img/heroes/' + hero + '.png') }}" 
+                     alt="{{ hero }}" 
+                     class="hero-icon"
+                     loading="lazy"
+                     onerror="this.src='{{ url_for('static', filename='img/placeholder.png') }}'">
+                <span class="hero-name">{{ hero }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="team-panel red-team">
+        <h2>Red Team</h2>
+        <div class="ban-section">
+            <h3>Bans</h3>
+            <div class="ban-slots" role="list" aria-label="Red team bans">
+                {% for i in range(3) %}
+                <div class="draft-slot ban-slot"
+                     role="listitem"
+                     tabindex="0"
+                     data-team="red"
+                     data-index="{{ i }}"
+                     data-type="ban"
+                     aria-label="Red team ban slot {{ i + 1 }} of 3"></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="pick-section">
+            <h3>Picks</h3>
+            <div class="pick-slots" role="list" aria-label="Red team picks">
+                {% for i in range(5) %}
+                <div class="draft-slot pick-slot"
+                     role="listitem"
+                     tabindex="0"
+                     data-team="red"
+                     data-index="{{ i }}"
+                     data-type="pick"
+                     aria-label="Red team pick slot {{ i + 1 }} of 5"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast-container" role="alert" aria-live="polite"></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/draft.js') }}"></script>
+{% endblock %} 

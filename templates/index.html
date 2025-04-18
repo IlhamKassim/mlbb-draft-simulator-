@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Hero Counter System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --mlbb-navy: #1a1f2c;
+            --mlbb-gold: #c8aa6e;
+            --mlbb-blue: #4169e1;
+            --mlbb-red: #dc3545;
+            --mlbb-purple: #9932cc;
+            --mlbb-green: #28a745;
+            --mlbb-orange: #fd7e14;
+            --mlbb-cyan: #17a2b8;
+        }
+
+        body {
+            background-color: var(--mlbb-navy);
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, var(--mlbb-navy), #2a3142);
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--mlbb-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(200, 170, 110, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .app-title {
+            color: var(--mlbb-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .draft-button {
+            background: linear-gradient(45deg, var(--mlbb-gold), #e6c88a);
+            color: var(--mlbb-navy);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .draft-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(200, 170, 110, 0.4);
+            color: var(--mlbb-navy);
+            background: linear-gradient(45deg, #e6c88a, var(--mlbb-gold));
+        }
+
+        .draft-button .icon {
+            margin-left: 8px;
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+
+        .main-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--mlbb-gold);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-select {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            border: 1px solid var(--mlbb-gold);
+        }
+
+        .selected-heroes {
+            min-height: 60px;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .hero-badge {
+            margin: 4px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--mlbb-gold);
+            color: #fff;
+        }
+
+        .role-badge {
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+
+        .role-Tank { background-color: var(--mlbb-blue); }
+        .role-Fighter { background-color: var(--mlbb-red); }
+        .role-Mage { background-color: var(--mlbb-purple); }
+        .role-Assassin { background-color: var(--mlbb-green); }
+        .role-Marksman { background-color: var(--mlbb-orange); }
+        .role-Support { background-color: var(--mlbb-cyan); }
+
+        .hero-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--mlbb-gold);
+            transition: transform 0.2s;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--mlbb-gold);
+        }
+
+        .item-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border: 1px solid var(--mlbb-gold);
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 2px;
+        }
+
+        .item-icon {
+            margin-bottom: 8px;
+            width: calc(16.666% - 8px);
+            min-width: 50px;
+        }
+
+        .item-icon small {
+            display: block;
+            font-size: 0.7rem;
+            margin-top: 2px;
+            color: #ccc;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .items-container {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 8px;
+            margin-top: 8px;
+        }
+
+        .items-title {
+            font-size: 0.9rem;
+            color: var(--mlbb-gold);
+            margin-bottom: 8px;
+        }
+
+        .card-body {
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .battle-tip {
+            background-color: rgba(200, 170, 110, 0.1);
+            border-left: 4px solid var(--mlbb-gold);
+            padding: 1rem;
+            margin-top: 2rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .select2-container {
+            width: 100% !important;
+        }
+
+        .select2-container--default .select2-selection--single {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--mlbb-gold);
+            border-radius: 8px;
+            height: 40px;
+            padding: 5px;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: #fff;
+            line-height: 28px;
+        }
+
+        .select2-dropdown {
+            background-color: var(--mlbb-navy);
+            border: 1px solid var(--mlbb-gold);
+        }
+
+        .select2-container--default .select2-results__option {
+            color: #fff;
+            padding: 8px;
+        }
+
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            background-color: var(--mlbb-gold);
+            color: var(--mlbb-navy);
+        }
+
+        .select2-container--default .select2-results__group {
+            color: var(--mlbb-gold);
+            font-weight: bold;
+            padding: 6px;
+        }
+
+        .btn-mlbb {
+            background-color: var(--mlbb-gold);
+            color: var(--mlbb-navy);
+            font-weight: bold;
+            border: none;
+            padding: 10px 25px;
+            transition: all 0.3s;
+        }
+
+        .btn-mlbb:hover {
+            background-color: #b59756;
+            transform: translateY(-2px);
+        }
+
+        .btn-mlbb:disabled {
+            background-color: #665533;
+            transform: none;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .spinner-mlbb {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--mlbb-gold);
+            border-top: 5px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .remove-hero {
+            cursor: pointer;
+            margin-left: 8px;
+            opacity: 0.7;
+        }
+
+        .remove-hero:hover {
+            opacity: 1;
+        }
+
+        /* Hero of the Day Styles */
+        .hotd-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--mlbb-gold);
+            border-radius: 10px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hotd-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--mlbb-gold);
+        }
+
+        .hotd-date {
+            color: var(--mlbb-gold);
+            font-size: 0.9rem;
+        }
+
+        .featured-hero-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid var(--mlbb-gold);
+        }
+
+        .featured-hero-info {
+            padding: 1rem;
+        }
+
+        .counter-heroes {
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 0.5rem 0;
+        }
+
+        .counter-hero-card {
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .counter-hero-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            border: 1px solid var(--mlbb-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .counter-hero-name {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .tips-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tips-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #ccc;
+        }
+
+        .tips-list li:before {
+            content: "•";
+            color: var(--mlbb-gold);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .build-title {
+            color: var(--mlbb-gold);
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(200, 170, 110, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .item-icon {
+            width: 70px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 8px;
+            border: 1px solid rgba(200, 170, 110, 0.2);
+        }
+
+        .item-icon:hover {
+            border-color: var(--mlbb-gold);
+            background: rgba(200, 170, 110, 0.1);
+        }
+
+        .item-img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 4px;
+        }
+
+        .item-icon small {
+            display: block;
+            font-size: 0.7rem;
+            color: #ccc;
+            word-wrap: break-word;
+        }
+
+        .modal-content {
+            border: 1px solid var(--mlbb-gold);
+        }
+
+        .modal-header {
+            border-bottom-color: rgba(200, 170, 110, 0.3);
+        }
+
+        #heroDescription {
+            color: #ccc;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-banner text-center">
+        <h1 class="app-title animate__animated animate__fadeIn">MLBB Hero Counter</h1>
+        <p class="text-light animate__animated animate__fadeIn animate__delay-1s">Find the perfect counter for any hero combination</p>
+        <a href="/draft" class="draft-button animate__animated animate__fadeIn animate__delay-2s">
+            Pro Draft Simulator
+            <span class="icon">⚔️</span>
+        </a>
+    </div>
+
+    <!-- Hero of the Day Section -->
+    <div class="container mb-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="hotd-card animate__animated animate__fadeIn">
+                    <div class="hotd-header">
+                        <h3 class="text-gold mb-0">Hero of the Day</h3>
+                        <span class="hotd-date">{{ today_date }}</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="/static/img/{{ featured_hero.name.lower().replace(' ', '_') }}.png" 
+                                 alt="{{ featured_hero.name }}"
+                                 class="featured-hero-img"
+                                 onerror="this.src='/static/img/placeholder.png'">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="featured-hero-info">
+                                <h4>{{ featured_hero.name }} <span class="role-badge role-{{ featured_hero.role }}">{{ featured_hero.role }}</span></h4>
+                                <div class="counter-section">
+                                    <h5 class="text-gold">Top Counters:</h5>
+                                    <div class="d-flex counter-heroes">
+                                        {% for counter in featured_hero.counters %}
+                                        <div class="counter-hero-card">
+                                            <img src="/static/img/{{ counter.name.lower().replace(' ', '_') }}.png" 
+                                                 alt="{{ counter.name }}"
+                                                 class="counter-hero-img"
+                                                 onerror="this.src='/static/img/placeholder.png'">
+                                            <span class="counter-hero-name">{{ counter.name }}</span>
+                                            <span class="role-badge role-{{ counter.role }}">{{ counter.role }}</span>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="counter-tips mt-3">
+                                    <h5 class="text-gold">Counter Tips:</h5>
+                                    <ul class="tips-list">
+                                        {% for tip in featured_hero.tips %}
+                                        <li>{{ tip }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="main-card p-4 animate__animated animate__fadeIn animate__delay-1s">
+                    <h5 class="text-gold mb-4">Select Enemy Heroes (Max 5)</h5>
+                    <div class="selected-heroes mb-3" id="selectedHeroes"></div>
+                    
+                    <select class="hero-select" id="heroSelect">
+                        <option value="">Search and select a hero...</option>
+                        <optgroup label="Tank">
+                            {% for hero in heroes if hero.role == 'Tank' %}
+                            <option value="{{ hero.name }}" data-role="{{ hero.role }}">{{ hero.name }}</option>
+                            {% endfor %}
+                        </optgroup>
+                        <optgroup label="Fighter">
+                            {% for hero in heroes if hero.role == 'Fighter' %}
+                            <option value="{{ hero.name }}" data-role="{{ hero.role }}">{{ hero.name }}</option>
+                            {% endfor %}
+                        </optgroup>
+                        <optgroup label="Mage">
+                            {% for hero in heroes if hero.role == 'Mage' %}
+                            <option value="{{ hero.name }}" data-role="{{ hero.role }}">{{ hero.name }}</option>
+                            {% endfor %}
+                        </optgroup>
+                        <optgroup label="Assassin">
+                            {% for hero in heroes if hero.role == 'Assassin' %}
+                            <option value="{{ hero.name }}" data-role="{{ hero.role }}">{{ hero.name }}</option>
+                            {% endfor %}
+                        </optgroup>
+                        <optgroup label="Marksman">
+                            {% for hero in heroes if hero.role == 'Marksman' %}
+                            <option value="{{ hero.name }}" data-role="{{ hero.role }}">{{ hero.name }}</option>
+                            {% endfor %}
+                        </optgroup>
+                        <optgroup label="Support">
+                            {% for hero in heroes if hero.role == 'Support' %}
+                            <option value="{{ hero.name }}" data-role="{{ hero.role }}">{{ hero.name }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    </select>
+
+                    <button class="btn btn-mlbb mt-4 w-100" id="recommendBtn" disabled>
+                        Get Recommendations
+                    </button>
+                </div>
+
+                <div id="recommendations" class="mt-4"></div>
+
+                <div class="battle-tip animate__animated animate__fadeIn" style="display: none;" id="battleTip">
+                    <h6 class="text-gold mb-2">Battle Tip</h6>
+                    <p class="mb-0" id="tipText"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner-mlbb"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const battleTips = [
+            "Counter-building is just as important as counter-picking! Don't forget to adjust your item build.",
+            "Some heroes can be countered by specific battle spells. Choose wisely!",
+            "Team composition matters more than individual counters. Aim for synergy!",
+            "Even counter-picked heroes can still be effective if played skillfully.",
+            "Watch the enemy's rotation patterns to predict their next move."
+        ];
+
+        const selectedHeroes = new Map();
+        const heroSelect = $('#heroSelect');
+        const selectedHeroesDiv = document.getElementById('selectedHeroes');
+        const recommendBtn = document.getElementById('recommendBtn');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        const recommendationsDiv = document.getElementById('recommendations');
+        const battleTipDiv = document.getElementById('battleTip');
+        const tipText = document.getElementById('tipText');
+
+        // Load hero descriptions and roles
+        let heroDescriptions = {};
+        let heroRoles = {};
+
+        Promise.all([
+            fetch('/static/data/hero_descriptions.json').then(r => r.json()),
+            fetch('/static/data/hero_roles.json').then(r => r.json())
+        ]).then(([descs, rolesByCategory]) => {
+            heroDescriptions = descs;
+            // invert rolesByCategory to hero->role
+            for (const role in rolesByCategory) {
+                rolesByCategory[role].forEach(h => { heroRoles[h] = role; });
+            }
+        }).catch(error => {
+            console.error('Error loading hero data:', error);
+        });
+
+        heroSelect.select2({
+            placeholder: "Search and select a hero...",
+            allowClear: true,
+            templateResult: formatHero,
+            templateSelection: formatHero
+        });
+
+        function formatHero(hero) {
+            if (!hero.id) return hero.text;
+            const role = $(hero.element).data('role');
+            return $(`<span>${hero.text} <span class="role-badge role-${role}">${role}</span></span>`);
+        }
+
+        function showRandomTip() {
+            const randomTip = battleTips[Math.floor(Math.random() * battleTips.length)];
+            tipText.textContent = randomTip;
+            battleTipDiv.style.display = 'block';
+        }
+
+        heroSelect.on('change', function() {
+            const selectedOption = $(this).find(':selected');
+            const selectedValue = selectedOption.val();
+            const selectedRole = selectedOption.data('role');
+            
+            if (selectedValue && selectedHeroes.size < 5) {
+                addHero(selectedValue, selectedRole);
+                $(this).val('').trigger('change');
+            }
+            updateRecommendButton();
+        });
+
+        function addHero(hero, role) {
+            if (selectedHeroes.size >= 5) return;
+            selectedHeroes.set(hero, role);
+            updateSelectedHeroesDisplay();
+        }
+
+        function removeHero(hero) {
+            selectedHeroes.delete(hero);
+            updateSelectedHeroesDisplay();
+            updateRecommendButton();
+        }
+
+        function updateSelectedHeroesDisplay() {
+            selectedHeroesDiv.innerHTML = Array.from(selectedHeroes.entries())
+                .map(([hero, role]) => `
+                    <span class="hero-badge animate__animated animate__fadeIn">
+                        ${hero} <span class="role-badge role-${role}">${role}</span>
+                        <span class="remove-hero" onclick="removeHero('${hero}')">&times;</span>
+                    </span>
+                `).join('');
+        }
+
+        function updateRecommendButton() {
+            recommendBtn.disabled = selectedHeroes.size === 0;
+        }
+
+        function scrollToResults() {
+            const resultsSection = document.getElementById('recommendations');
+            resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        recommendBtn.addEventListener('click', async function() {
+            loadingOverlay.classList.add('active');
+            recommendationsDiv.innerHTML = '';
+            battleTipDiv.style.display = 'none';
+            recommendBtn.disabled = true;
+
+            try {
+                console.log('Sending request with heroes:', Array.from(selectedHeroes.keys()));
+                const response = await fetch('/recommend', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        enemy_heroes: Array.from(selectedHeroes.keys())
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+                }
+
+                const data = await response.json();
+                console.log('Received response:', data);
+                
+                if (data.error) {
+                    recommendationsDiv.innerHTML = `
+                        <div class="alert alert-danger animate__animated animate__fadeIn">
+                            ${data.error}
+                        </div>`;
+                    return;
+                }
+
+                if (!data.recommendations || Object.keys(data.recommendations).length === 0) {
+                    recommendationsDiv.innerHTML = `
+                        <div class="alert alert-info animate__animated animate__fadeIn">
+                            Counter data is not yet available for the selected heroes. 
+                            We're working on adding this information soon!
+                        </div>`;
+                    return;
+                }
+
+                let html = '<div class="row">';
+                for (const [enemy, heroData] of Object.entries(data.recommendations)) {
+                    html += `
+                        <div class="col-12">
+                            <h5 class="text-gold mb-3 animate__animated animate__fadeIn">
+                                Counters for ${enemy} <span class="role-badge role-${heroData.role}">${heroData.role}</span>
+                            </h5>
+                            <div class="row mb-4">
+                    `;
+                    
+                    if (heroData.counters && heroData.counters.length) {
+                        heroData.counters.forEach((counter, index) => {
+                            const heroImageName = counter.name.toLowerCase().replace(/[^a-z0-9]/g, '_');
+                            html += `
+                                <div class="col-12 col-sm-6 col-md-4 animate__animated animate__fadeIn" style="animation-delay: ${index * 0.1}s">
+                                    <div class="hero-card">
+                                        <img src="/static/img/${heroImageName}.png" 
+                                             class="hero-img" 
+                                             alt="${counter.name} portrait"
+                                             onerror="this.src='/static/img/placeholder.png'">
+                                        <div class="card-body">
+                                            <h6 class="mb-2">${counter.name}</h6>
+                                            <span class="role-badge role-${counter.role}">${counter.role}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        html += `
+                            <div class="col-12">
+                                <p class="text-muted">No counter data available yet</p>
+                            </div>
+                        `;
+                    }
+                    
+                    html += '</div></div>';
+                }
+                html += '</div>';
+                recommendationsDiv.innerHTML = html;
+                showRandomTip();
+                scrollToResults();
+            } catch (error) {
+                console.error('Error:', error);
+                recommendationsDiv.innerHTML = `
+                    <div class="alert alert-danger animate__animated animate__fadeIn">
+                        Error getting recommendations: ${error.message}
+                    </div>
+                `;
+            } finally {
+                loadingOverlay.classList.remove('active');
+                recommendBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,26 @@
+{
+  "patch_version": "1.8.72",
+  "last_updated": "2024-03-20",
+  "heroes": {
+    "aamon": {
+      "tier": "A",
+      "pick_rate": 15.2,
+      "ban_rate": 8.5,
+      "win_rate": 52.3,
+      "counters": ["saber", "karina", "natalia"],
+      "lore": "A shadowy assassin who uses invisibility and burst damage to eliminate key targets.",
+      "skill_order": ["Ultimate", "Skill 2", "Skill 1"],
+      "playstyle": "Stealth burst assassin focusing on backline elimination"
+    },
+    "angela": {
+      "tier": "S",
+      "pick_rate": 28.7,
+      "ban_rate": 22.1,
+      "win_rate": 54.8,
+      "counters": ["diggie", "valir", "mathilda"],
+      "lore": "A support doll who can attach to allies and enhance their capabilities.",
+      "skill_order": ["Skill 1", "Ultimate", "Skill 2"],
+      "playstyle": "Protective support who excels at saving allies and providing sustained healing"
+    }
+  }
+} 

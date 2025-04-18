@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}Request Timeout{% endblock %}
+
+{% block content %}
+<div class="error-container">
+    <div class="error-content text-center">
+        <div class="error-icon mb-4">
+            <i class="fas fa-clock fa-4x text-warning"></i>
+        </div>
+        
+        <h1 class="display-4 mb-3">Request Timeout</h1>
+        <div class="error-message mb-4">
+            <p class="lead">The server is taking too long to respond.</p>
+            <div class="alert alert-info">
+                <h4 class="alert-heading"><i class="fas fa-info-circle me-2"></i>Possible Causes:</h4>
+                <ul class="text-start mb-0">
+                    <li>High server load</li>
+                    <li>Slow network connection</li>
+                    <li>Complex operation taking longer than expected</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="retry-section mb-4">
+            <p>Retrying automatically in <span id="countdown">{{ retry_after }}</span> seconds...</p>
+            <div class="progress mb-3">
+                <div id="retry-progress" class="progress-bar bg-warning progress-bar-striped progress-bar-animated" 
+                     role="progressbar" style="width: 100%"></div>
+            </div>
+        </div>
+        
+        <div class="error-actions">
+            <button onclick="retryNow()" class="btn btn-warning">
+                <i class="fas fa-rotate me-2"></i>Retry Now
+            </button>
+            <button onclick="window.history.back()" class="btn btn-secondary ms-2">
+                <i class="fas fa-arrow-left me-2"></i>Go Back
+            </button>
+            <button onclick="reportIssue()" class="btn btn-link ms-2">
+                <i class="fas fa-flag me-2"></i>Report Issue
+            </button>
+        </div>
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let timeLeft = {{ retry_after }};
+    const progressBar = document.getElementById('retry-progress');
+    const countdownEl = document.getElementById('countdown');
+    const totalTime = {{ retry_after }};
+    
+    const countdown = setInterval(() => {
+        timeLeft--;
+        countdownEl.textContent = timeLeft;
+        
+        // Update progress bar
+        const progress = (timeLeft / totalTime) * 100;
+        progressBar.style.width = `${progress}%`;
+        
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            retryNow();
+        }
+    }, 1000);
+});
+
+function retryNow() {
+    // Show loading state
+    const btn = document.querySelector('.btn-warning');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Retrying...';
+    
+    // Attempt to reload with cache-busting parameter
+    window.location.href = window.location.href + 
+        (window.location.search ? '&' : '?') + 
+        '_retry=' + new Date().getTime();
+}
+
+function reportIssue() {
+    const supportEmail = '{{ config.SUPPORT_EMAIL }}';
+    const subject = 'Timeout Issue Report';
+    const body = `Page: ${window.location.href}\nTimestamp: ${new Date().toISOString()}`;
+    window.location.href = `mailto:${supportEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+</script>
+{% endblock %}
+
+{% block styles %}
+<style>
+.error-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.error-content {
+    background: var(--bs-light);
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.error-icon {
+    color: var(--bs-warning);
+}
+
+.progress {
+    height: 0.5rem;
+    border-radius: 1rem;
+}
+
+.retry-section {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.alert-info {
+    background-color: rgba(var(--bs-info-rgb), 0.1);
+    border-color: rgba(var(--bs-info-rgb), 0.2);
+}
+
+.error-actions {
+    margin-top: 2rem;
+}
+
+.btn-link {
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+</style>
+{% endblock %}
+{% endblock %} 

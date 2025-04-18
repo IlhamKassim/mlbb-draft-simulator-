@@ -1,0 +1,92 @@
+2025-04-17 11:28:08,364 ERROR: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:42]
+Traceback (most recent call last):
+  File "/Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py", line 206, in search_heroes
+    hero_name = data.get('name', '').lower()
+                ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py", line 219, in search_heroes
+    abort(500)
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/helpers.py", line 272, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/exceptions.py", line 863, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-17 11:28:23,893 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:28:23,894 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:28:29,116 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:28:29,117 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:29:14,651 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:29:14,653 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:29:17,854 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:29:17,855 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:29:27,166 ERROR: Error getting heroes by role: 'str' object has no attribute 'get' [in /Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py:183]
+2025-04-17 11:29:27,166 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:41]
+2025-04-17 11:29:27,166 ERROR: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:42]
+Traceback (most recent call last):
+  File "/Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py", line 179, in get_heroes_by_role
+    if data.get('role', '').lower() == role.lower()
+       ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py", line 184, in get_heroes_by_role
+    abort(500)
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/helpers.py", line 272, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/exceptions.py", line 863, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-17 11:29:53,354 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:29:53,356 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:30:02,056 ERROR: Error getting heroes by role: 'str' object has no attribute 'get' [in /Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py:183]
+2025-04-17 11:30:02,057 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/app.py:105]
+2025-04-17 11:30:30,822 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:30:30,823 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:30:50,188 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:30:50,190 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:30:55,399 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:30:55,400 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:30:59,051 ERROR: Error getting heroes by role: 'str' object has no attribute 'get' [in /Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py:183]
+2025-04-17 11:30:59,052 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/app.py:109]
+2025-04-17 11:31:14,762 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:31:14,765 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:31:19,985 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:31:19,986 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:31:53,436 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:31:53,439 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:32:02,190 ERROR: Error getting heroes by role: 'str' object has no attribute 'get' [in /Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py:183]
+2025-04-17 11:32:02,190 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/app.py:109]
+2025-04-17 11:32:18,921 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:32:18,923 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:32:24,181 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:32:24,182 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:32:44,546 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:32:44,548 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:32:52,341 ERROR: Error getting heroes by role: 'str' object has no attribute 'get' [in /Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py:183]
+2025-04-17 11:32:52,341 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/app.py:109]
+2025-04-17 11:33:08,940 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:33:08,942 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:34:59,056 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:34:59,057 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:34:59,205 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:34:59,206 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:35:19,399 ERROR: Not Found: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again. [in /Users/hamboii/mlbb_counter_system/app.py:117]
+2025-04-17 11:35:19,401 ERROR: Not Found: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again. [in /Users/hamboii/mlbb_counter_system/app.py:117]

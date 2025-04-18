@@ -1,0 +1,97 @@
+2025-04-17 11:25:05,766 INFO: 404 Error: http://localhost:5001/static/img/Chang'e.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:05,778 INFO: 404 Error: http://localhost:5001/static/img/Luo%20Yi.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:05,801 INFO: 404 Error: http://localhost:5001/static/img/Yi%20Sun-shin.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:05,813 INFO: 404 Error: http://localhost:5001/static/img/Popol%20and%20Kupa.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:20,855 INFO: 404 Error: http://localhost:5001/static/img/Luo%20Yi.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:52,867 INFO: 404 Error: http://localhost:5001/static/img/Lapu-Lapu.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:52,870 INFO: 404 Error: http://localhost:5001/static/img/Jawhead.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:52,871 INFO: 404 Error: http://localhost:5001/static/img/Yu%20Zhong.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:52,874 INFO: 404 Error: http://localhost:5001/static/img/X.Borg.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:52,946 INFO: 404 Error: http://localhost:5001/static/img/Chang'e.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:52,956 INFO: 404 Error: http://localhost:5001/static/img/Luo%20Yi.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:52,976 INFO: 404 Error: http://localhost:5001/static/img/Yi%20Sun-shin.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:52,989 INFO: 404 Error: http://localhost:5001/static/img/Popol%20and%20Kupa.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:25:55,308 INFO: 404 Error: http://localhost:5001/static/img/Lapu-Lapu.png [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:27]
+2025-04-17 11:26:03,806 ERROR: Error getting heroes by role: 'str' object has no attribute 'get' [in /Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py:183]
+2025-04-17 11:26:03,806 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:41]
+2025-04-17 11:26:03,806 ERROR: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:42]
+Traceback (most recent call last):
+  File "/Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py", line 179, in get_heroes_by_role
+    if data.get('role', '').lower() == role.lower()
+       ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py", line 184, in get_heroes_by_role
+    abort(500)
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/helpers.py", line 272, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/exceptions.py", line 863, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-17 11:26:07,407 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:26:07,408 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:26:08,636 ERROR: Error searching heroes: 'str' object has no attribute 'get' [in /Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py:218]
+2025-04-17 11:26:08,636 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:41]
+2025-04-17 11:26:08,636 ERROR: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:42]
+Traceback (most recent call last):
+  File "/Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py", line 206, in search_heroes
+    hero_name = data.get('name', '').lower()
+                ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py", line 219, in search_heroes
+    abort(500)
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/helpers.py", line 272, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/exceptions.py", line 863, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-17 11:27:47,202 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:27:47,204 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:28:02,038 ERROR: Error getting heroes by role: 'str' object has no attribute 'get' [in /Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py:183]
+2025-04-17 11:28:02,038 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:41]
+2025-04-17 11:28:02,038 ERROR: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:42]
+Traceback (most recent call last):
+  File "/Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py", line 179, in get_heroes_by_role
+    if data.get('role', '').lower() == role.lower()
+       ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py", line 184, in get_heroes_by_role
+    abort(500)
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/helpers.py", line 272, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/exceptions.py", line 863, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-04-17 11:28:03,552 INFO: MLBB Draft Simulator startup [in /Users/hamboii/mlbb_counter_system/app.py:43]
+2025-04-17 11:28:03,553 INFO: Successfully loaded all game data [in /Users/hamboii/mlbb_counter_system/mlbb/utils/data_loader.py:52]
+2025-04-17 11:28:08,364 ERROR: Error searching heroes: 'str' object has no attribute 'get' [in /Users/hamboii/mlbb_counter_system/mlbb/blueprints/draft.py:218]
+2025-04-17 11:28:08,364 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in /Users/hamboii/mlbb_counter_system/mlbb/utils/errors.py:41]

@@ -1,0 +1,51 @@
+{
+  "heroes": {
+    "Aamon": {
+      "pick_rate": 15.2,
+      "ban_rate": 22.4,
+      "win_rate": 53.1,
+      "priority_score": 37.6
+    },
+    "Ling": {
+      "pick_rate": 28.7,
+      "ban_rate": 45.3,
+      "win_rate": 51.8,
+      "priority_score": 74.0
+    },
+    "Mathilda": {
+      "pick_rate": 42.1,
+      "ban_rate": 18.9,
+      "win_rate": 54.2,
+      "priority_score": 61.0
+    },
+    "Franco": {
+      "pick_rate": 35.6,
+      "ban_rate": 12.3,
+      "win_rate": 52.5,
+      "priority_score": 47.9
+    },
+    "Tigreal": {
+      "pick_rate": 25.4,
+      "ban_rate": 5.2,
+      "win_rate": 51.3,
+      "priority_score": 30.6
+    },
+    "Atlas": {
+      "pick_rate": 31.2,
+      "ban_rate": 15.6,
+      "win_rate": 53.8,
+      "priority_score": 46.8
+    },
+    "Khufra": {
+      "pick_rate": 29.8,
+      "ban_rate": 18.4,
+      "win_rate": 52.9,
+      "priority_score": 48.2
+    }
+  },
+  "meta_info": {
+    "last_updated": "2024-03-20",
+    "tournament_data": ["MPL ID S13", "MPL PH S13", "M5 World Championship"],
+    "total_matches": 342
+  }
+} 

@@ -1,0 +1,8 @@
+{
+    "roles": ["Tank", "Fighter", "Assassin", "Marksman", "Mage", "Support"],
+    "heroes": {
+        "Test Fighter": ["Fighter"],
+        "Test Mage": ["Mage"],
+        "Test Tank": ["Tank"]
+    }
+} 

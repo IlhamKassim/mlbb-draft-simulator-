@@ -1,0 +1,78 @@
+body { background: #0F0F13; color: #FFF; }
+.team-panel { width: 220px; background: #1A1F2B; border-radius: 8px; }
+.ally-panel { border: 4px solid #007BFF; }
+.opp-panel { border: 4px solid #DC3545; }
+.team-label { font-size:1.5rem; text-transform:uppercase; }
+.team-winrate { font-size:2rem; font-weight:bold; }
+.hero-slot { width:60px; height:60px; margin:4px; }
+.hero-slot img { width:100%; height:100%; border-radius:4px; }
+.metric-card { flex:1; background:#1A1F2B; border-radius:6px; padding:1rem; margin:0 .5rem; }
+.metric-icon { font-size:1.5rem; }
+.metric-value { font-size:1.75rem; font-weight:bold; }
+.tiny-icon { width:24px; height:24px; margin-right:4px; }
+table.table-dark { background:#1A1F2B; }
+table.table-dark th, table.table-dark td { vertical-align:middle; }
+
+/* Additional styles for better UX */
+.analysis-panel {
+    background: rgba(26, 31, 43, 0.5);
+    border-radius: 8px;
+    margin: 0 1rem;
+}
+
+.hero-slot.banned img {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+.metric-card {
+    transition: transform 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+}
+
+.table-dark {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-dark thead th {
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Role icons */
+.role-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .team-panel {
+        width: 180px;
+    }
+    .hero-slot {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column;
+    }
+    .team-panel {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .analysis-panel {
+        margin: 1rem 0;
+    }
+} 

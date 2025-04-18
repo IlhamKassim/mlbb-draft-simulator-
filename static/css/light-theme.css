@@ -1,0 +1,77 @@
+/* Light Theme Variables */
+:root[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --border-color: #dddddd;
+    --accent-color: #4a90e2;
+    --hover-color: #e8f0fe;
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+}
+
+/* Light Theme Specific Styles */
+[data-theme="light"] body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .hero-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+[data-theme="light"] .hero-card:hover {
+    background-color: var(--hover-color);
+}
+
+[data-theme="light"] .draft-slot {
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+}
+
+[data-theme="light"] .draft-slot.active {
+    border-color: var(--accent-color);
+}
+
+[data-theme="light"] .search-bar {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .role-filter {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .timer {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+}
+
+[data-theme="light"] .phase-indicator {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .team-panel {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .error-message {
+    background-color: var(--error-color);
+    color: white;
+}
+
+[data-theme="light"] .loading-state {
+    background-color: var(--bg-secondary);
+} 

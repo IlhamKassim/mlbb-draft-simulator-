@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="d-flex">
+  <!-- Ally Sidebar -->
+  <div class="team-panel ally-panel p-3">
+    <h2 class="team-label">ALLY</h2>
+    <div class="team-winrate text-primary">{{ ally_winrate }}%</div>
+    <div class="ban-list my-2">
+      <h4>Bans</h4>
+      <div class="d-flex flex-wrap">
+        {% for b in ally_bans %}
+          <div class="hero-slot banned"><img src="{{ b.img }}" alt="{{ b.name }}"></div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="pick-list my-2">
+      <h4>Picks</h4>
+      <div class="d-flex flex-wrap">
+        {% for p in ally_picks %}
+          <div class="hero-slot picked"><img src="{{ p.img }}" alt="{{ p.name }}"></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Center Analysis Panel -->
+  <div class="flex-fill analysis-panel p-3">
+    <!-- Summary Metrics -->
+    <div class="d-flex justify-content-between mb-4">
+      <div class="metric-card text-center">
+        <div class="metric-icon">👥</div>
+        <div class="metric-label">Champions</div>
+        <div class="metric-value text-primary">{{ ally_metrics.champions }}</div>
+      </div>
+      <div class="metric-card text-center">
+        <div class="metric-icon">🔄</div>
+        <div class="metric-label">Matchups</div>
+        <div class="metric-value text-danger">{{ ally_metrics.matchups }}</div>
+      </div>
+      <div class="metric-card text-center">
+        <div class="metric-icon">👯</div>
+        <div class="metric-label">Duos</div>
+        <div class="metric-value text-primary">{{ ally_metrics.duos }}</div>
+      </div>
+      <div class="metric-card text-center">
+        <div class="metric-icon">📈</div>
+        <div class="metric-label">Winrate</div>
+        <div class="metric-value text-danger">{{ ally_metrics.winrate }}</div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between mb-4">
+      <div class="metric-card text-center">
+        <div class="metric-icon">👥</div>
+        <div class="metric-label">Champions</div>
+        <div class="metric-value text-secondary">{{ opp_metrics.champions }}</div>
+      </div>
+      <div class="metric-card text-center">
+        <div class="metric-icon">🔄</div>
+        <div class="metric-label">Matchups</div>
+        <div class="metric-value text-warning">{{ opp_metrics.matchups }}</div>
+      </div>
+      <div class="metric-card text-center">
+        <div class="metric-icon">👯</div>
+        <div class="metric-label">Duos</div>
+        <div class="metric-value text-secondary">{{ opp_metrics.duos }}</div>
+      </div>
+      <div class="metric-card text-center">
+        <div class="metric-icon">📈</div>
+        <div class="metric-label">Winrate</div>
+        <div class="metric-value text-warning">{{ opp_metrics.winrate }}</div>
+      </div>
+    </div>
+
+    <!-- Overview Tables -->
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Ally Overview</h3>
+        <table class="table table-dark table-striped">
+          <thead><tr><th>Role</th><th>Champion</th><th>Base</th><th>Matchup</th><th>Duo</th><th>Win%</th></tr></thead>
+          <tbody>
+            {% for r in ally_overview %}
+            <tr>
+              <td><i class="{{ r.icon }}"></i></td>
+              <td><img src="{{ r.img }}" class="tiny-icon"> {{ r.name }}</td>
+              <td>{{ r.base }}</td><td>{{ r.matchup }}</td><td>{{ r.duo }}</td><td>{{ r.winrate }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <h3>Opponent Overview</h3>
+        <table class="table table-dark table-striped">
+          <thead><tr><th>Role</th><th>Champion</th><th>Base</th><th>Matchup</th><th>Duo</th><th>Win%</th></tr></thead>
+          <tbody>
+            {% for r in opp_overview %}
+            <tr>
+              <td><i class="{{ r.icon }}"></i></td>
+              <td><img src="{{ r.img }}" class="tiny-icon"> {{ r.name }}</td>
+              <td>{{ r.base }}</td><td>{{ r.matchup }}</td><td>{{ r.duo }}</td><td>{{ r.winrate }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Opponent Sidebar -->
+  <div class="team-panel opp-panel p-3">
+    <h2 class="team-label">OPPONENT</h2>
+    <div class="team-winrate text-danger">{{ opp_winrate }}%</div>
+    <div class="ban-list my-2">
+      <h4>Bans</h4>
+      <div class="d-flex flex-wrap">
+        {% for b in opp_bans %}
+          <div class="hero-slot banned"><img src="{{ b.img }}" alt="{{ b.name }}"></div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="pick-list my-2">
+      <h4>Picks</h4>
+      <div class="d-flex flex-wrap">
+        {% for p in opp_picks %}
+          <div class="hero-slot picked"><img src="{{ p.img }}" alt="{{ p.name }}"></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 
