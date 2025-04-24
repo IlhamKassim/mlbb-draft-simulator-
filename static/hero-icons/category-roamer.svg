@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" fill="#F4433640" rx="20" ry="20"/>
+  <text x="128" y="120" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#212121">Category:Roamer</text>
+  <text x="128" y="150" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#212121">Fighter</text>
+  <circle cx="128" cy="60" r="30" fill="#F44336" opacity="0.8"/>
+</svg>

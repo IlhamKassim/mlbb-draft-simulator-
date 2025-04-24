@@ -221,4 +221,274 @@ class DataLoader:
                 if not role or data.get('role', '').lower() == role.lower():
                     filtered_heroes[name] = data
         
-        return filtered_heroes 
+        return filtered_heroes
+
+"""
+Data loading utilities for the MLBB Draft Simulator.
+"""
+import json
+import os
+import pandas as pd
+from typing import Dict, Any, Optional, List, Union
+from datetime import datetime
+from .errors import DataLoadError
+
+class MLBBDataLoader:
+    """Handles loading and processing of MLBB match data."""
+    
+    def __init__(self, data_dir: str):
+        self.data_dir = data_dir
+        self.matches_df = None
+        self.hero_stats = {}
+        self.patch_stats = {}
+    
+    def load_matches(self, file_pattern: str = "**/*.csv") -> None:
+        """Load match data from CSV files.
+        
+        Args:
+            file_pattern: Glob pattern for match data files.
+        """
+        try:
+            # Load all CSV files in data directory
+            all_files = []
+            for root, _, files in os.walk(self.data_dir):
+                for file in files:
+                    if file.endswith('.csv'):
+                        all_files.append(os.path.join(root, file))
+            
+            if not all_files:
+                raise DataLoadError(f"No CSV files found in {self.data_dir}")
+            
+            # Read and concatenate all files
+            dfs = []
+            for file in all_files:
+                df = pd.read_csv(file)
+                # Convert string lists to actual lists
+                list_cols = ['blue_picks', 'red_picks', 'blue_bans', 'red_bans']
+                for col in list_cols:
+                    if col in df.columns:
+                        df[col] = df[col].apply(eval)
+                dfs.append(df)
+            
+            self.matches_df = pd.concat(dfs, ignore_index=True)
+            
+            # Compute patch-specific statistics
+            self._compute_patch_stats()
+            
+        except Exception as e:
+            raise DataLoadError(f"Failed to load match data: {e}")
+    
+    def _compute_patch_stats(self) -> None:
+        """Compute hero statistics for each patch version."""
+        if self.matches_df is None:
+            return
+        
+        for patch in self.matches_df['patch_version'].unique():
+            patch_matches = self.matches_df[self.matches_df['patch_version'] == patch]
+            
+            hero_stats = {}
+            for hero in self._get_all_heroes():
+                # Calculate pick rate
+                blue_picks = sum(hero in picks for picks in patch_matches['blue_picks'])
+                red_picks = sum(hero in picks for picks in patch_matches['red_picks'])
+                total_picks = blue_picks + red_picks
+                pick_rate = total_picks / len(patch_matches)
+                
+                # Calculate ban rate
+                blue_bans = sum(hero in bans for bans in patch_matches['blue_bans'])
+                red_bans = sum(hero in bans for bans in patch_matches['red_bans'])
+                total_bans = blue_bans + red_bans
+                ban_rate = total_bans / len(patch_matches)
+                
+                # Calculate win rate
+                blue_wins = sum((hero in picks and winner == 'blue')
+                              for picks, winner in zip(patch_matches['blue_picks'],
+                                                     patch_matches['winner']))
+                red_wins = sum((hero in picks and winner == 'red')
+                             for picks, winner in zip(patch_matches['red_picks'],
+                                                    patch_matches['winner']))
+                
+                if total_picks > 0:
+                    win_rate = (blue_wins + red_wins) / total_picks
+                else:
+                    win_rate = 0.0
+                
+                hero_stats[hero] = {
+                    'pick_rate': pick_rate,
+                    'ban_rate': ban_rate,
+                    'win_rate': win_rate,
+                    'total_picks': total_picks,
+                    'total_bans': total_bans
+                }
+            
+            self.patch_stats[patch] = hero_stats
+    
+    def _get_all_heroes(self) -> set:
+        """Get set of all heroes appearing in matches."""
+        heroes = set()
+        for col in ['blue_picks', 'red_picks', 'blue_bans', 'red_bans']:
+            heroes.update(*self.matches_df[col].tolist())
+        return heroes
+    
+    def get_patch_stats(self, patch: str = None) -> Dict[str, Dict[str, float]]:
+        """Get hero statistics for a specific patch.
+        
+        Args:
+            patch: Patch version. If None, returns latest patch stats.
+            
+        Returns:
+            Dictionary of hero statistics for the patch.
+        """
+        if not self.patch_stats:
+            return {}
+        
+        if patch is None:
+            # Get latest patch
+            patch = max(self.patch_stats.keys())
+        
+        return self.patch_stats.get(patch, {})
+    
+    def compute_hero_features(self) -> Dict[str, Any]:
+        """Compute hero features from match data.
+        
+        Returns:
+            Dictionary containing hero features including:
+            - patches: List of patch versions
+            - heroes: List of all heroes
+            - patch_stats: Per-patch hero statistics
+            - role_synergies: Role synergy matrix
+        """
+        if self.matches_df is None:
+            raise DataLoadError("No match data loaded. Call load_matches() first.")
+            
+        # Get sorted list of patches
+        patches = sorted(self.matches_df['patch_version'].unique())
+        
+        # Get all heroes that appear in the dataset
+        heroes = list(self._get_all_heroes())
+        
+        # Compute role synergies
+        roles = ['Tank', 'Fighter', 'Assassin', 'Marksman', 'Mage', 'Support']
+        role_synergies = {}
+        
+        for role1 in roles:
+            role_synergies[role1] = {}
+            for role2 in roles:
+                # Calculate win rate when these roles are on the same team
+                win_rate = self._compute_role_synergy(role1, role2)
+                role_synergies[role1][role2] = win_rate
+        
+        return {
+            'patches': patches,
+            'heroes': heroes,
+            'patch_stats': self.patch_stats,
+            'role_synergies': role_synergies
+        }
+    
+    def _compute_role_synergy(self, role1: str, role2: str) -> float:
+        """Compute synergy score between two roles.
+        
+        Args:
+            role1: First role
+            role2: Second role
+            
+        Returns:
+            Win rate when both roles are on the same team
+        """
+        total_games = 0
+        won_games = 0
+        
+        # Load hero roles if not already loaded
+        if not hasattr(self, '_hero_roles'):
+            try:
+                with open(os.path.join(os.path.dirname(self.data_dir), 'static/data/hero_roles.json'), 'r') as f:
+                    self._hero_roles = json.load(f)
+            except Exception:
+                return 0.0
+                
+        for _, match in self.matches_df.iterrows():
+            # Check blue team
+            blue_roles = set()
+            for hero in match['blue_picks']:
+                if hero in self._hero_roles:
+                    blue_roles.update(self._hero_roles[hero])
+                    
+            # Check red team
+            red_roles = set()
+            for hero in match['red_picks']:
+                if hero in self._hero_roles:
+                    red_roles.update(self._hero_roles[hero])
+                    
+            # Check if roles appear together on either team
+            if (role1 in blue_roles and role2 in blue_roles):
+                total_games += 1
+                if match['winner'] == 'blue':
+                    won_games += 1
+            if (role1 in red_roles and role2 in red_roles):
+                total_games += 1
+                if match['winner'] == 'red':
+                    won_games += 1
+                    
+        return won_games / total_games if total_games > 0 else 0.0
+
+    def compute_role_trends(self) -> Dict[str, Dict[str, Dict[str, float]]]:
+        """Compute pick, ban, and win rates by role across patches.
+        
+        Returns:
+            Dict with structure:
+            {
+                'patch_id': {
+                    'role': {
+                        'pick_rate': float,
+                        'ban_rate': float,
+                        'win_rate': float
+                    }
+                }
+            }
+        """
+        role_trends = {}
+        
+        # Load hero role mappings
+        with open('static/data/hero_roles.json', 'r') as f:
+            role_data = json.load(f)
+            roles = role_data['roles'].keys()
+        
+        # Get hero to role mapping
+        with open('static/data/hero_data.json', 'r') as f:
+            hero_data = json.load(f)
+            hero_roles = {hero['name']: hero['primary_role'] for hero in hero_data}
+        
+        for patch in self.patch_stats.keys():
+            role_trends[patch] = {role: {'pick_rate': 0.0, 'ban_rate': 0.0, 'win_rate': 0.0} 
+                                for role in roles}
+            
+            patch_matches = self.matches_df[self.matches_df['patch'] == patch]
+            total_matches = len(patch_matches)
+            
+            if total_matches == 0:
+                continue
+                
+            # Aggregate stats by role
+            for role in roles:
+                role_heroes = [hero for hero, hero_role in hero_roles.items() 
+                             if hero_role == role]
+                
+                role_picks = 0
+                role_wins = 0
+                role_bans = 0
+                
+                for hero in role_heroes:
+                    if hero in self.patch_stats[patch]:
+                        stats = self.patch_stats[patch][hero]
+                        role_picks += stats.get('picks', 0)
+                        role_wins += stats.get('wins', 0)
+                        role_bans += stats.get('bans', 0)
+                
+                # Calculate rates
+                if role_picks > 0:
+                    role_trends[patch][role]['pick_rate'] = role_picks / (total_matches * 2)
+                    role_trends[patch][role]['win_rate'] = role_wins / role_picks
+                if total_matches > 0:
+                    role_trends[patch][role]['ban_rate'] = role_bans / (total_matches * 2)
+        
+        return role_trends

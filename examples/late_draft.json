@@ -1,0 +1,9 @@
+{
+    "blue_picks": ["Chou", "Gusion", "Beatrix", "Akai"],
+    "red_picks": ["Franco", "Fanny", "Esmeralda", "Atlas"],
+    "blue_bans": ["Ling", "Lancelot", "Hayabusa"],
+    "red_bans": ["Wanwan", "Karrie", "Clint"],
+    "blue_turn": true,
+    "is_pick_phase": true,
+    "patch_version": "1.6.44"
+}

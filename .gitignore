@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 *.so
 .Python
+env/
 build/
 develop-eggs/
 dist/
@@ -15,7 +16,6 @@ lib64/
 parts/
 sdist/
 var/
-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -23,16 +23,33 @@ wheels/
 # Virtual Environment
 venv/
 ENV/
-env/
-.env
 
-# IDE
+# IDE files
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# OS
+# Logs
+logs/
+*.log
+
+# Backup files
+*.bak
+
+# Data and model files (optional, remove if you want to include these)
+# data/raw/
+# models/
+
+# Environment variables
+.env
+
+# Node modules for frontend
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# OS specific files
 .DS_Store
 .DS_Store?
 ._*
@@ -40,8 +57,3 @@ env/
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# Project specific
-*.log
-instance/
-.webassets-cache 

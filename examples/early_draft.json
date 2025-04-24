@@ -1,0 +1,9 @@
+{
+    "blue_picks": [],
+    "red_picks": [],
+    "blue_bans": ["Ling"],
+    "red_bans": ["Wanwan"],
+    "blue_turn": false,
+    "is_pick_phase": false,
+    "patch_version": "1.6.44"
+}

@@ -1,34 +1,152 @@
 {
-    "heroes": [
-        {
-            "id": "test_hero_1",
-            "name": "Test Fighter",
-            "roles": ["Fighter"],
-            "specialty": "Damage/Durability",
-            "difficulty": "Moderate",
-            "description": "A test fighter hero for unit testing",
-            "counters": ["Test Mage", "Test Marksman"],
-            "countered_by": ["Test Assassin"]
-        },
-        {
-            "id": "test_hero_2",
-            "name": "Test Mage",
-            "roles": ["Mage"],
-            "specialty": "Magic Damage",
-            "difficulty": "High",
-            "description": "A test mage hero for unit testing",
-            "counters": ["Test Marksman"],
-            "countered_by": ["Test Fighter", "Test Assassin"]
-        },
-        {
-            "id": "test_hero_3",
-            "name": "Test Tank",
-            "roles": ["Tank"],
-            "specialty": "Crowd Control",
-            "difficulty": "Low",
-            "description": "A test tank hero for unit testing",
-            "counters": ["Test Mage"],
-            "countered_by": ["Test Marksman"]
-        }
-    ]
-} 
+  "Category:About hero": {
+    "name": "Category:About hero",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "None",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Assassin": {
+    "name": "Category:Assassin",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "Burst",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Elf": {
+    "name": "Category:Elf",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "None",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Felines": {
+    "name": "Category:Felines",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "None",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Fighter": {
+    "name": "Category:Fighter",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "Control",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Hero by role": {
+    "name": "Category:Hero by role",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "None",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Hero Specialities": {
+    "name": "Category:Hero Specialities",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "None",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Jungler": {
+    "name": "Category:Jungler",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "None",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Mage": {
+    "name": "Category:Mage",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "Burst",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Marksman": {
+    "name": "Category:Marksman",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "Damage",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Mid Laner": {
+    "name": "Category:Mid Laner",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "None",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Oriental Fighters": {
+    "name": "Category:Oriental Fighters",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "None",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Roamer": {
+    "name": "Category:Roamer",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "None",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Side Laner": {
+    "name": "Category:Side Laner",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "None",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  },
+  "Category:Support": {
+    "name": "Category:Support",
+    "roles": [
+      "Fighter"
+    ],
+    "specialty": "Damage",
+    "difficulty": "Normal",
+    "description": "No description available",
+    "last_update": "2025-04-24"
+  }
+}

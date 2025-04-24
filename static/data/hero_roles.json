@@ -1,42 +1,17 @@
 {
-    "roles": {
-        "Tank": {
-            "description": "Durable heroes that excel at absorbing damage and protecting allies",
-            "characteristics": ["High HP", "High Defense", "Crowd Control", "Initiation"],
-            "playstyle": "Frontline, protect allies, initiate team fights"
-        },
-        "Fighter": {
-            "description": "Versatile heroes that can both deal and take damage",
-            "characteristics": ["Balanced Stats", "Sustained Damage", "Durability"],
-            "playstyle": "Semi-tank, sustained combat, split pushing"
-        },
-        "Assassin": {
-            "description": "Mobile heroes specializing in eliminating key targets",
-            "characteristics": ["High Burst Damage", "Mobility", "Single Target Focus"],
-            "playstyle": "Ambush, eliminate squishies, quick in-and-out"
-        },
-        "Marksman": {
-            "description": "Ranged heroes that deal consistent physical damage",
-            "characteristics": ["High Physical Damage", "Range", "Late Game Scaling"],
-            "playstyle": "Stay back, farm early, deal sustained damage"
-        },
-        "Mage": {
-            "description": "Spell-casting heroes with high magical damage",
-            "characteristics": ["High Magic Damage", "Area Effects", "Utility"],
-            "playstyle": "Control fights, burst damage, objective control"
-        },
-        "Support": {
-            "description": "Heroes that enhance allies and control fights",
-            "characteristics": ["Healing", "Buffs", "Crowd Control", "Utility"],
-            "playstyle": "Protect carries, provide vision, enable team"
-        }
-    },
-    "role_counters": {
-        "Tank": ["Marksman", "Mage"],
-        "Fighter": ["Marksman", "Mage"],
-        "Assassin": ["Tank", "Fighter"],
-        "Marksman": ["Assassin", "Fighter"],
-        "Mage": ["Assassin", "Fighter"],
-        "Support": ["Assassin", "Fighter"]
-    }
-} 
+  "Category:About hero": [],
+  "Category:Assassin": [],
+  "Category:Elf": [],
+  "Category:Felines": [],
+  "Category:Fighter": [],
+  "Category:Hero by role": [],
+  "Category:Hero Specialities": [],
+  "Category:Jungler": [],
+  "Category:Mage": [],
+  "Category:Marksman": [],
+  "Category:Mid Laner": [],
+  "Category:Oriental Fighters": [],
+  "Category:Roamer": [],
+  "Category:Side Laner": [],
+  "Category:Support": []
+}

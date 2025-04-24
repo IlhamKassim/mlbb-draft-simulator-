@@ -1,0 +1,4 @@
+match_id,patch_version,blue_picks,red_picks,blue_bans,red_bans,winner
+1,1.0.0,"['Gusion', 'Tigreal', 'Layla', 'Eudora', 'Alucard']","['Franco', 'Miya', 'Zilong', 'Nana', 'Balmond']","['Fanny', 'Ling', 'Lancelot']","['Hayabusa', 'Hanzo', 'Helcurt']","blue"
+2,1.0.0,"['Franco', 'Miya', 'Zilong', 'Nana', 'Balmond']","['Gusion', 'Tigreal', 'Layla', 'Eudora', 'Alucard']","['Hayabusa', 'Hanzo', 'Helcurt']","['Fanny', 'Ling', 'Lancelot']","red"
+3,1.0.0,"['Alucard', 'Miya', 'Layla', 'Franco', 'Nana']","['Gusion', 'Tigreal', 'Zilong', 'Eudora', 'Balmond']","['Fanny', 'Ling', 'Lancelot']","['Hayabusa', 'Hanzo', 'Helcurt']","blue" 

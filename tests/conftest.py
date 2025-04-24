@@ -1,53 +1,45 @@
-import os
 import pytest
-import tempfile
-from mlbb import create_app
-from mlbb.utils.data_loader import DataLoader
+import pandas as pd
+from pathlib import Path
 
-@pytest.fixture
-def app():
-    """Create and configure a test Flask application instance."""
-    app = create_app({
-        'TESTING': True,
-        'DATA_PATH': os.path.join(os.path.dirname(__file__), 'test_data')
+@pytest.fixture(scope="session")
+def sample_matches():
+    """Create sample match data for testing."""
+    return pd.DataFrame({
+        'match_id': range(1, 4),
+        'patch_version': ['1.0.0'] * 3,
+        'blue_picks': [
+            ['Gusion', 'Tigreal', 'Layla'],
+            ['Franco', 'Miya', 'Zilong'],
+            ['Alucard', 'Estes', 'Nana']
+        ],
+        'red_picks': [
+            ['Franco', 'Miya', 'Zilong'],
+            ['Gusion', 'Tigreal', 'Layla'],
+            ['Fanny', 'Angela', 'Chou']
+        ],
+        'blue_bans': [
+            ['Fanny', 'Ling'],
+            ['Hayabusa', 'Hanzo'],
+            ['Gusion', 'Kadita']
+        ],
+        'red_bans': [
+            ['Hayabusa', 'Hanzo'],
+            ['Fanny', 'Ling'],
+            ['Selena', 'Harith']
+        ],
+        'winner': ['blue', 'red', 'blue']
     })
-    return app
 
-@pytest.fixture
-def client(app):
-    """Create a test client for the app."""
-    return app.test_client()
+@pytest.fixture(scope="session")
+def test_data_dir(tmp_path_factory, sample_matches):
+    """Create a temporary directory with test data."""
+    test_dir = tmp_path_factory.mktemp("test_data")
+    sample_matches.to_csv(test_dir / "sample_matches.csv", index=False)
+    return test_dir
 
-@pytest.fixture
-def mock_data_path(monkeypatch):
-    """Configure the test data path."""
-    test_data_path = os.path.join(os.path.dirname(__file__), 'test_data')
-    def mock_get_data_path(*args, **kwargs):
-        return test_data_path
-    monkeypatch.setattr(DataLoader, 'get_data_path', mock_get_data_path)
-    return test_data_path
-
-@pytest.fixture(autouse=True)
-def app_context(app):
-    """Create an application context for tests."""
-    with app.app_context():
-        yield
-
-@pytest.fixture
-def test_data_dir():
-    """Create a temporary directory for test data files."""
-    with tempfile.TemporaryDirectory() as temp_dir:
-        # Create test data files here if needed
-        yield temp_dir
-
-@pytest.fixture(autouse=True)
-def mock_data_path(monkeypatch, test_data_dir):
-    """Override the data directory path for testing."""
-    monkeypatch.setenv('MLBB_DATA_DIR', test_data_dir)
-
-def pytest_configure(config):
-    """Configure pytest for our test suite."""
-    config.addinivalue_line(
-        "markers",
-        "integration: mark test as integration test"
-    ) 
+@pytest.fixture(scope="function")
+def clean_data_loader(test_data_dir):
+    """Create a fresh data loader instance for each test."""
+    from data_loader import MLBBDataLoader
+    return MLBBDataLoader(test_data_dir) 

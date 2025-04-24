@@ -1,8 +1,13 @@
 """
 Analysis blueprint for handling draft analysis functionality.
 """
-from flask import Blueprint, jsonify, render_template, request, current_app, url_for
+from flask import Blueprint, jsonify, render_template, request, current_app, url_for, send_file
+import json
+import io
+import matplotlib.pyplot as plt
 from ..utils.data_loader import DataLoader
+from examples.visualization_examples import plot_role_trends
+import plotly.graph_objects as go
 
 bp = Blueprint('analysis', __name__, url_prefix='/analysis')
 
@@ -77,4 +82,43 @@ def recommend_picks():
         })
     except Exception as e:
         current_app.logger.error(f"Error generating recommendations: {str(e)}")
-        return jsonify({'error': 'Failed to generate recommendations'}), 500 
+        return jsonify({'error': 'Failed to generate recommendations'}), 500
+
+@bp.route('/role-trends', methods=['GET'])
+def get_role_trends():
+    """Generate and return interactive role trend analysis visualization"""
+    patch_stats = get_patch_statistics()
+    patches = sorted(patch_stats.keys())
+    
+    with open('static/data/hero_roles.json', 'r') as f:
+        role_data = json.load(f)
+    
+    # Create interactive plot
+    fig = go.Figure()
+    
+    for role in set(role_data.values()):
+        role_winrates = [
+            patch_stats[patch]['roles'].get(role, {}).get('win_rate', 0) 
+            for patch in patches
+        ]
+        fig.add_trace(go.Scatter(
+            x=patches,
+            y=role_winrates,
+            name=role,
+            mode='lines+markers',
+            hovertemplate="Patch: %{x}<br>Win Rate: %{y:.2%}<extra></extra>"
+        ))
+    
+    fig.update_layout(
+        title='Role Win Rates Across Patches',
+        xaxis_title='Patch',
+        yaxis_title='Win Rate',
+        yaxis_tickformat='.0%',
+        hovermode='x unified'
+    )
+    
+    return fig.to_html(
+        full_html=False,
+        include_plotlyjs='cdn',
+        config={'displayModeBar': True}
+    )
